@@ -26,7 +26,9 @@ class ChatController {
     }
 
     async fetchChats(req, res) {
-        const {ownId, userId} = req.body
+        const {ownId, userId} = req.query
+        //const {ownId, userId} = req.body
+
         try {
             Chat.find({
                 $and: [
