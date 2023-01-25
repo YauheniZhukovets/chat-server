@@ -29,7 +29,7 @@ start()
 const io = require('socket.io')(server, {
     pingTimeout: 40000,
     cors: {
-        origin: 'http://localhost:3000',
+        origin: '*',
     }
 })
 
