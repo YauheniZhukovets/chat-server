@@ -33,7 +33,7 @@ class UserController {
     }
 
     async getAllUsers(req, res) {
-        const users = await User.find()
+        const users = await User.find({ name: { $regex: req.query.search, $options: "i" } })
         res.send(users)
     }
 }
